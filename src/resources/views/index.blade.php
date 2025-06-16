@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mogitate</title>
 </head>
+
 <body>
-    <h1>商品一覧</h1>
+  <header class="header">
+    <div class="header__inner">
+      <a class="header__logo">
+        mogitate
+      </a>
+    </div>
+  </header>
+  <main>
+  <div class="search-form__content">
+    <h2 class="search-form__content-title">商品一覧</h2>
+  </div>
+  <form class="search-form" action="public/img" method="get"></form>
     <div class="flex"></div>
-    <a class="practice__btn"></a>
-    <div class="fruit">
+    <a class="practice__btn">商品名で検索</a>
+   <div class="search-form__item">
       <div class="fruit__img">
         <img src="/storage/img/kiwi.png" alt="kiwi">
       </div>

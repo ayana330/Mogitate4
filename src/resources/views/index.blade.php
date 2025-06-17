@@ -19,8 +19,20 @@
     <h2 class="search-form__content-title">商品一覧</h2>
   </div>
   <form class="search-form" action="public/img" method="get"></form>
-    <div class="flex"></div>
-    <a class="practice__btn">商品名で検索</a>
+    <div class="product__group-content">
+      <div class="product__input--text">
+        <input type="text" name="name" placeholder="商品名で検索" />
+      </div>
+    </div>
+    <div class="product__button">
+      <button class="product__button-submit" type="submit">検索</button>
+    </div>
+    <h4 class="search-form__content-tittle">価格順で表示</h4>
+    <form action="" method=""></form>
+      <select name="select">
+        <option value="高い順に表示">高い順に表示</option>
+        <option value="低い順に表示">低い順に表示</option>
+      </select>
    <div class="search-form__item">
       <div class="fruit__img">
         <img src="/storage/img/kiwi.png" alt="kiwi">

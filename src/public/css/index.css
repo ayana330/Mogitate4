@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+}
+
+.flex__item {
+    display: flex;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.practice__card {
+    width: 10%;
+}

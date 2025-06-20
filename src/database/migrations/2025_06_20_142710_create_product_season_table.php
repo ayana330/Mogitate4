@@ -15,8 +15,8 @@ class CreateProductSeasonTable extends Migration
     {
         Schema::create('product_season', function (Blueprint $table) {
             $table->id();
-            $table->product_id();
-            $table->season_id();
+            $table->string('product_id');
+            $table->string('season_id');
             $table->timestamps();
         });
     }

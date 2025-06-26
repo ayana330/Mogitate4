@@ -18,3 +18,4 @@ Route::get('/', function () {
     // return view('welcome');
     return view('products');
 });
+Route::get('/register', [ProductController::class, 'register']);

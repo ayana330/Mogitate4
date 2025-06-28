@@ -11,14 +11,9 @@
 </head>
 
 <body>
-   <header class="header">
-     <div class="header__inner">
-       <a class="header__logo" href="/">
-         mogitate
-       </a>
-     </div>
-   </header>
-   
+   <h1 class="header__logo">
+        mogitate
+      </h1>   
    <main>
      <div class="product-register__content">
         <div class="product-register__heading">

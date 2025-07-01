@@ -91,6 +91,7 @@
 
             <button class="register__button-submit" type="submit">登録</button>
           </div>
+      </div>    
    </main>
 </body>
 </html>

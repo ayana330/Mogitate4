@@ -1,0 +1,25 @@
+.header__logo {
+    color: rgb(253, 215, 45);
+    font-size: 25px;
+    background-color: white;
+}
+
+.product-register__heading {
+    text-align: center;
+}
+
+.register__group {
+    text-align: center;
+}
+
+.register__group__content {
+    text-align: center;
+}
+
+.register__input--text {
+    text-align: center;
+}
+
+.register__button {
+    text-align: center;
+}

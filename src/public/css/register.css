@@ -7,20 +7,24 @@
 .product-register__heading {
     text-align: center;
     margin: 30px;
+    background-color: rgb(223, 227, 230);
 }
 
 .register__group {
     text-align: center;
     margin: 20px;
+    background-color: rgb(223, 227, 230);
 }
 
 .register__group__content {
     text-align: center;
     margin: 20px;
+    background-color: rgb(223, 227, 230);
 }
 
 .register__input--text {
     text-align: center;
+    background-color: rgb(223, 227, 230);
 }
 
 .register__button {

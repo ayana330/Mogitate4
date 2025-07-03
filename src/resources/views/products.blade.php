@@ -66,46 +66,6 @@
                 ストロベリー ￥1200
               </div>
           </div>
-          <div class="practice__card">
-            <div class="fruit__img">
-              <img src="/storage/img/strawberry.png" alt="strawberry">
-            </div>
-            <div class="card__ttl">
-                ストロベリー ￥1200
-              </div>
-          </div>
-          <div class="practice__card">
-            <div class="fruit__img">
-              <img src="/storage/img/strawberry.png" alt="strawberry">
-            </div>
-            <div class="card__ttl">
-                ストロベリー ￥1200
-              </div>
-          </div>
-          <div class="practice__card">
-            <div class="fruit__img">
-              <img src="/storage/img/strawberry.png" alt="strawberry">
-            </div>
-            <div class="card__ttl">
-                ストロベリー ￥1200
-              </div>
-          </div>
-          <div class="practice__card">
-            <div class="fruit__img">
-              <img src="/storage/img/strawberry.png" alt="strawberry">
-            </div>
-            <div class="card__ttl">
-                ストロベリー ￥1200
-              </div>
-          </div>
-          <div class="practice__card">
-            <div class="fruit__img">
-              <img src="/storage/img/strawberry.png" alt="strawberry">
-            </div>
-            <div class="card__ttl">
-                ストロベリー ￥1200
-              </div>
-          </div>
 
                     </div><!-- end flex__item -->
           </div><!-- end list -->

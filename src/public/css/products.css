@@ -1,19 +1,27 @@
+.header__logo {
+    color: rgb(248, 200, 6);
+    font-size: 20px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    background-color: rgb(245, 247, 248);
 }
 
 .flex {
     display: flex;
     width: 100%;
     padding: 20px;
+    background-color: rgb(245, 247, 248);
 }
 
 .flex__item {
     display: flex;
     width: 100%;
     margin-bottom: 10px;
+    max-width: 1230px;
 }
 
 .container {
@@ -24,6 +32,7 @@
     box-shadow: 0px 3px 10px rgba(0, 0 , 0, 0.2);
     margin-bottom: 10px;
     width: 360px;
+    flex-wrap: wrap;
 }
 
 .aside {

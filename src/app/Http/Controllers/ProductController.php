@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function products()
     {
+        $products = Product::all();
         $products = Product::simplePaginate(6);
-        return view('index', ['products' => $products]);
+        return view('products', ['products' => $products]);
     }
 
     public function register()

@@ -6,14 +6,17 @@
 
 .product-register__heading {
     text-align: center;
+    margin: 30px;
 }
 
 .register__group {
     text-align: center;
+    margin: 20px;
 }
 
 .register__group__content {
     text-align: center;
+    margin: 20px;
 }
 
 .register__input--text {
@@ -23,3 +26,4 @@
 .register__button {
     text-align: center;
 }
+

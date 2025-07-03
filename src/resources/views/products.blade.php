@@ -19,7 +19,7 @@
   <header class="header">
     <div class="header__inner">
       <h2>商品一覧</h2>
-      </div>  
+    </div>  
     <div>
       <a href="/products/register">＋商品を追加</a>
     </div>

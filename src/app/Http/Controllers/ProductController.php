@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function products()
+    public function index()
     {
-        $products = Product::all();
+        // $products = Product::all();
         $products = Product::simplePaginate(6);
         return view('products', ['products' => $products]);
     }
@@ -18,4 +18,12 @@ class ProductController extends Controller
     {
         return view('register');
     }
+
+    public function store(Request $request)
+    {
+        $product = new Product();
+
+        return redirect('/products');
+    }
+
 }

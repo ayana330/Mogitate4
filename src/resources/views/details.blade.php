@@ -15,17 +15,17 @@
         mogitate
       </h1>
 
-  <div class="productld__input--text">
+  <div class="store__input--text">
               <input type="file" name="file" placeholder="ファイルを選択">
   </div>
-  <div class="produtld__group">
-    <div class="productld__group-title">
-      <span class="productld__label--item">商品名</span>
-      <div class="productld__group-content">
-        <div class="productld__input--text">
+  <div class="store__group">
+    <div class="store__group-title">
+      <span class="store__label--item">商品名</span>
+      <div class="store__group-content">
+        <div class="store__input--text">
           <input type="text" name="name" placeholder="">
         </div>
-      <div class="productld__error"></div>
+      <div class="store__error"></div>
         <!--バリデーション機能を実装したら記述します。  -->
       </div>
     </div>

@@ -50,24 +50,18 @@
       </aside>
       <div class="list">
         <div class="flex__item">
+          @foreach ($products as $product)
           <div class="practice__card">
             <div class="fruit__img">
-              <img src="/storage/img/kiwi.png" alt="kiwi">
+              <img src="/storage/img/{{$product->image}}" alt="kiwi">
             </div>
             <div class="card__ttl">
-              キウイ ￥800
+               {{$product->name}}　 {{$product->price}}
             </div>
           </div>
-          <div class="practice__card">
-            <div class="fruit__img">
-              <img src="/storage/img/strawberry.png" alt="strawberry">
-            </div>
-            <div class="card__ttl">
-                ストロベリー ￥1200
-              </div>
-          </div>
-
-                    </div><!-- end flex__item -->
+          @endforeach
+          </div><!-- end flex__item -->
+          {{ $products->links() }}
           </div><!-- end list -->
       </div><!-- end flex -->
   </main>

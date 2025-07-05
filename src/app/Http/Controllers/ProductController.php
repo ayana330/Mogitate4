@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\ProductRequest;
+
 class ProductController extends Controller
 {
     public function index()
@@ -21,7 +23,8 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $product = new Product();
+        // $product = new Product();
+        $product =$request->only(['name', 'price', 'image', 'season', 'description']);
 
         return redirect('/products');
     }

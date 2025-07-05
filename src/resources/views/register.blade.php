@@ -113,7 +113,7 @@
             <button class="register__button-submit" type="submit">戻る</button>
 
             <button class="register__button-submit" type="submit">登録</button>
-            <a href="/products"></a>
+            <a href="/products/store"></a>
 
           </div>
 </form>          

@@ -33,6 +33,7 @@
     margin-bottom: 10px;
     width: 360px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .aside {

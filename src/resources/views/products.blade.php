@@ -36,6 +36,7 @@
           </div>
           <div class="product__button">
             <button class="product__button-submit" type="submit">検索</button>
+            <a href="/products/search"></a>
           </div>
         </form>
 

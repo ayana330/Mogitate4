@@ -26,7 +26,7 @@ class ProductController extends Controller
         // $product = new Product();
         $product =$request->only(['name', 'price', 'image', 'season', 'description']);
 
-        return redirect('/products');
+        return view('store', compact('product'));
     }
 
 }

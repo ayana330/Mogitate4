@@ -16,5 +16,3 @@ Route::get('/products/register', [ProductController::class, 'register']);
 
 Route::post('/products/store', [ProductController::class, 'store']);
 
-Route::get('products/search', [ProductController::class,'search']);
-

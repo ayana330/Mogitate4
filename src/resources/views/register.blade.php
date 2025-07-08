@@ -31,13 +31,13 @@
             </p>
             <div class="register__group-content">
               <div class="register__input--text">
-                <input type="text" name="name" placeholder="商品名を入力">
+                <input type="text" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
               </div>
-              <div class="register__error">
+            </div>
+            <div class="register__error-message">
               @error('name')
-                 {{$errors->first('name')}}
+              {{ $message }}
               @enderror
-              </div>
             </div>
         </section>
         <section class="register__group">
@@ -47,7 +47,7 @@
           </p>
           <div class="register__group-content">
             <div class="register__input--text">
-              <input type="price" name="price" placeholder="値段を入力" >
+              <input type="price" name="price" value="{{ old('price') }}"placeholder="値段を入力" >
               </div>
               <div class="register__error">
               @error('price')

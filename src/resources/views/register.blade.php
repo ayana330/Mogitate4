@@ -47,7 +47,7 @@
           </p>
           <div class="register__group-content">
             <div class="register__input--text">
-              <input type="price" name="price" value="{{ old('price') }}"placeholder="値段を入力" >
+              <input type="number" name="price" value="{{ old('price') }}" placeholder="値段を入力" >
               </div>
               <div class="register__error">
               @error('price')
@@ -63,11 +63,11 @@
           </p>
           <div class="register__group-content">
             <div class="register__input--text">
-              <input type="file" name="file" placeholder="ファイルを選択">
+              <input type="file" name="image">
             </div>
             <div class="register__error">
               @error('image')
-                 {{$errors->first('image')}}
+                 {{ $message }}
               @enderror
             </div>
           </div>
@@ -80,14 +80,14 @@
           </p>
           <div class="register__group-content">
             <div class="register__input--text">
-                <input type="radio" name="choices" value="春" />春
-                <input type="radio" name="choices" value="夏" />夏
-                <input type="radio" name="choices" value="秋" />秋
-                <input type="radio" name="choices" value="冬" />冬
+                <input type="checkbox" name="season[]" value="春" />春
+                <input type="checkbox" name="season[]" value="夏" />夏
+                <input type="checkbox" name="season[]" value="秋" />秋
+                <input type="checkbox" name="season[]" value="冬" />冬
             </div>
             <div class="register__error">
               @error('season')
-                 {{$errors->first('season')}}
+                 {{ $message }}
               @enderror
             </div>
           </div>
@@ -99,24 +99,20 @@
           </p>
           <div class="register__group-content">
             <div class="register__input--textarea">
-              <textarea name="textarea" placeholder="商品の説明を入力" cols="30" rows="10"></textarea> 
+              <textarea name="description" placeholder="商品の説明を入力" cols="30" rows="10"></textarea> 
             </div>
             <div class="register__error">
               @error('description')
-                {{$errors->first('description')}}
+                {{ $message }}
               @enderror
             </div>
           </div>
         </section>
 
-          <div class="register__button">
-            <button class="register__button-submit" type="submit">戻る</button>
+        <a href="{{ url()->previous() }}" class="register__button-submit">戻る</a>
 
-            <button class="register__button-submit" type="submit">登録</button>
-            <a href="/products/store"></a>
-
-          </div>
-</form>          
+        <button class="register__button-submit" type="submit">登録</button>
+      </form>          
       </div>    
    </main>
 </body>

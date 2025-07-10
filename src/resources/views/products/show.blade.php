@@ -16,9 +16,9 @@
   <main>
    <div class="product-store__content">
      <div class="product-store__heading">
-        <h2>商品登録</h2>
+        <h2>商品詳細</h2>
      </div>
-   <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+   <form class="form" action="/products/store" method="POST" enctype="multipart/form-data">
    @csrf
     <section class="store__group">
       <p class="store__group-title">
@@ -38,7 +38,7 @@
           </p>
         <div class="store__group-content">
           <div class="store__input--text">
-            <input type="price" name="price" placeholder="値段を入力" >
+            <input type="number" name="price" placeholder="値段を入力" min="0" >
           </div>
         </div>
         </section>
@@ -49,7 +49,7 @@
           </p>
         <div class="store__group-content">
           <div class="store__input--text">
-            <input type="file" name="file" placeholder="ファイルを選択">
+            <input type="file" name="file" >
           </div>
         </div>
         </section>
@@ -61,10 +61,10 @@
           </p>
           <div class="store__group-content">
             <div class="store__input--text">
-                <input type="radio" name="choices" value="春" />春
-                <input type="radio" name="choices" value="夏" />夏
-                <input type="radio" name="choices" value="秋" />秋
-                <input type="radio" name="choices" value="冬" />冬
+                <input type="checkbox" name="choices[]" value="春" />春
+                <input type="checkbox" name="choices[]" value="夏" />夏
+                <input type="checkbox" name="choices[]" value="秋" />秋
+                <input type="checkbox" name="choices[]" value="冬" />冬
             </div>
           </div>
           </section>
@@ -80,14 +80,12 @@
           </div>
           </section>
 
-          <div class="store__button">
-            <button class="store__button-submit" type="submit">戻る</button>
+          <a href="{{ url()->previous() }}" class="store__button-submit">戻る</a>
 
-            <button class="store__button-submit" type="submit">登録</button>
-            <a href="/products/store"></a>
-          </div>
-      </form>          
-   </main>
+          <button class="store__button-submit"   type="submit">登録</button>
+        </form>          
+       </div>
+</main>
 </body>
 
 </html>

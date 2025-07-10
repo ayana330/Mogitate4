@@ -14,5 +14,5 @@ Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/products/register', [ProductController::class, 'register']);
 
-Route::post('/products/store', [ProductController::class, 'store']);
+Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 

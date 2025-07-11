@@ -24,11 +24,13 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'price' => 'required|integer|min:0|max:10000',
-            'image' => 'required',
-            'season' => 'required',
-            'description' => 'required|max:120'
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'season' => 'required|array',
+            // 'season.*' => 'in:春,夏,秋,冬',
+            'description' => 'required|string',
+
         ];
     }
 

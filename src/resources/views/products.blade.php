@@ -52,7 +52,7 @@
       <div class="list">
         <div class="flex__item">
           @foreach ($products as $product)
-          <a href="products/show.blade.php">
+          <a href="products/{{$product->id}}">
           <div class="practice__card">
             <div class="fruit__img">
               <img src="/storage/img/{{$product->image}}" alt="kiwi">

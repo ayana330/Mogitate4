@@ -22,5 +22,14 @@ class SeasonsTableSeeder extends Seeder
             ['id' => 3, 'name' => '秋'],
             ['id' => 4, 'name' => '冬'],
         ]);
+
+        DB::table('product_season')->truncate();
+            ['id' => 1, 'name' => '3'],
+            ['id' => 2, 'name' => '夏'],
+            ['id' => 3, 'name' => '秋'],
+            ['id' => 4, 'name' => '冬'],
+        ]);
+
+
     }
 }

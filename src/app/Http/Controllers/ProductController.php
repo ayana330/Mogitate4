@@ -42,7 +42,19 @@ class ProductController extends Controller
         $product->description = $validated['description'];
         $product->save();
 
+        $validated = $request->validated();
+        $product_season = new Season();
+        $product_season->product_id = $validated['product_id()'];
+        $product_season->price = $validated['season_id()'];
+        $product->image = $image;
+        // $product->season = json_encode($validated['season']); // 配列を文字列化して保存
+
         return redirect('/products')->with('success', '商品を登録しました');
+    }
+
+        public function show()
+    {
+        return view('products.show');
     }
 
 }

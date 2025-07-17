@@ -8,9 +8,9 @@ Route::get('/', function () {
      return view('welcome');
 });
 
-
-
 Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/products/{productld}', [ProductController::class, 'show']);
 
 Route::get('/products/register', [ProductController::class, 'register']);
 

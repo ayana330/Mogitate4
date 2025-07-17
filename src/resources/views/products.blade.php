@@ -52,6 +52,7 @@
       <div class="list">
         <div class="flex__item">
           @foreach ($products as $product)
+          <a href="products/show.blade.php">
           <div class="practice__card">
             <div class="fruit__img">
               <img src="/storage/img/{{$product->image}}" alt="kiwi">
@@ -60,6 +61,7 @@
                {{$product->name}}　 {{$product->price}}
             </div>
           </div>
+          </a>
           @endforeach
           </div><!-- end flex__item -->
           {{ $products->links() }}

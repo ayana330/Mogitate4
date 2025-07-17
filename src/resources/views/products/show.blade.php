@@ -18,7 +18,7 @@
      <div class="product-store__heading">
         <h2>商品詳細</h2>
      </div>
-   <form class="form" action="/products/store" method="POST" enctype="multipart/form-data">
+   <!-- <form class="form" action="/products/store" method="POST" enctype="multipart/form-data"> -->
    @csrf
     <section class="store__group">
       <p class="store__group-title">
@@ -82,7 +82,7 @@
 
           <a href="{{ url()->previous() }}" class="store__button-submit">戻る</a>
 
-          <button class="store__button-submit"   type="submit">登録</button>
+          <button class="store__button-submit"   type="submit">変更を保存</button>
         </form>          
        </div>
 </main>

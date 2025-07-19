@@ -19,7 +19,13 @@
         <h2>商品詳細</h2>
      </div>
    <!-- <form class="form" action="/products/store" method="POST" enctype="multipart/form-data"> -->
-   @csrf
+   <form class="update-form" action="/products" method="post">
+    @method('PATCH')
+    @csrf
+  <div class="update-form__item">
+    <input class="update-form__item-input" type="text" name="name" value="{{ $products['name'] }}">
+    <input type="text">
+  </div>
     <section class="store__group">
       <p class="store__group-title">
         <span class="store__label--item">商品名</span>
@@ -85,6 +91,8 @@
           <button class="store__button-submit"   type="submit">変更を保存</button>
         </form>          
        </div>
+  </form>
+
 </main>
 </body>
 

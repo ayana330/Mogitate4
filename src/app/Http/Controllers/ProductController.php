@@ -52,8 +52,25 @@ class ProductController extends Controller
         return redirect('/products')->with('success', '商品を登録しました');
     }
 
-        public function show()
+        public function show(ProductRequest $request)
     {
+        $validated = $request->validated();
+        $request->file('image')->store('img','public');
+        $image = $request->file('image')->getClientOriginalName();
+        $product = new Product();
+        $product->name = $validated['name'];
+        $product->price = $validated['price'];
+        $product->image = $image;
+        // $product->season = json_encode($validated['season']); // 配列を文字列化して保存
+        $product->description = $validated['description'];
+        $product->save();
+
+        $validated = $request->validated();
+        $product_season = new Season();
+        $product_season->product_id = $validated['product_id()'];
+        $product_season->price = $validated['season_id()'];
+        $product->image = $image;
+
         return view('products.show');
     }
 

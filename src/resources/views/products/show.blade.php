@@ -24,7 +24,8 @@
     @csrf
   <div class="update-form__item">
     <input class="update-form__item-input" type="text" name="name" value="{{ $products['name'] }}">
-    <input type="text">
+    <input type="hidden" name="id" value="{{ $products['id'] }}">
+    
   </div>
     <section class="store__group">
       <p class="store__group-title">

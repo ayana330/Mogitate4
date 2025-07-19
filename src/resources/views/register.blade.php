@@ -24,6 +24,8 @@
 @endif
 <form action="/products/store" method="post" enctype="multipart/form-data">
   @csrf
+  @foreach ($products as $product)
+     <h1>{{ $product->name }}</h1>
         <section class="register__group">
             <p class="register__group-title">
               <span class="register__label--item">商品名</span>
@@ -112,6 +114,7 @@
         <a href="{{ url()->previous() }}" class="register__button-submit">戻る</a>
 
         <button class="register__button-submit" type="submit">登録</button>
+      @endforeach
       </form>          
       </div>    
    </main>

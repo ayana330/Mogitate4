@@ -18,7 +18,8 @@ class ProductController extends Controller
 
     public function register()
     {
-        return view('register');
+        $products = Products::all();
+        return view('products.show');
     }
 
     public function store(ProductRequest $request)
@@ -52,26 +53,17 @@ class ProductController extends Controller
         return redirect('/products')->with('success', '商品を登録しました');
     }
 
-        public function show(ProductRequest $request)
+        public function show()
     {
-        $validated = $request->validated();
-        $request->file('image')->store('img','public');
-        $image = $request->file('image')->getClientOriginalName();
-        $product = new Product();
-        $product->name = $validated['name'];
-        $product->price = $validated['price'];
-        $product->image = $image;
-        // $product->season = json_encode($validated['season']); // 配列を文字列化して保存
-        $product->description = $validated['description'];
-        $product->save();
-
-        $validated = $request->validated();
-        $product_season = new Season();
-        $product_season->product_id = $validated['product_id()'];
-        $product_season->price = $validated['season_id()'];
-        $product->image = $image;
-
         return view('products.show');
+    }
+
+        public function update(ProductRequest $request)
+    {
+        $product = $request->only(['content']);
+        Product::find($request->id)->update($product);
+
+        return view('products');
     }
 
 }

@@ -16,3 +16,5 @@ Route::get('/products/register', [ProductController::class, 'register']);
 
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 
+Route::patch('/products/{produtld}/update', [ProductController::class, 'update']);
+

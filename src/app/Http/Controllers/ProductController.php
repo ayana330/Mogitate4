@@ -53,9 +53,10 @@ class ProductController extends Controller
         return redirect('/products')->with('success', '商品を登録しました');
     }
 
-        public function show()
+        public function show($id)
     {
-        return view('products.show');
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
     }
 
         public function update(ProductRequest $request)
@@ -66,4 +67,9 @@ class ProductController extends Controller
         return view('products');
     }
 
+        public function delete(ProductRequest $request)
+    {
+        $product = Product::find($request->id);
+        return view('delete', ['product' => $product]);
+    }
 }

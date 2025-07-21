@@ -23,8 +23,8 @@
     @method('PATCH')
     @csrf
   <div class="update-form__item">
-    <input class="update-form__item-input" type="text" name="name" value="{{ $products['name'] }}">
-    <input type="hidden" name="id" value="{{ $products['id'] }}">
+    <input class="update-form__item-input" type="text" name="name" value="">
+    <input type="hidden" name="id" value="{{ $product['id'] }}">
     
   </div>
     <section class="store__group">

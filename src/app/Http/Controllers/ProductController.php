@@ -72,4 +72,11 @@ class ProductController extends Controller
         $product = Product::find($request->id);
         return view('delete', ['product' => $product]);
     }
+
+        public function edit(ProductRequest $request)
+    {
+        $product => Product::find($request->id);
+        return view('edit', ['form' => $product]);
+    }
+
 }

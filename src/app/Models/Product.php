@@ -9,14 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use HasFactory;
-
+    use SoftDeletes;
     protected $fillable = ['name', 'price', 'image', 'season', 'description'
     ];
 }
 
-class Post extends Model
-{
-    use SoftDeletes;
-
-    protected $dates = ['deleted_at'];
-}

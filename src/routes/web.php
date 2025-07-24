@@ -10,9 +10,10 @@ Route::get('/', function () {
 
 Route::get('/products', [ProductController::class, 'index']);
 
+Route::get('/products/register', [ProductController::class, 'register']);
+
 Route::get('/products/{productld}', [ProductController::class, 'show']);
 
-Route::get('/products/register', [ProductController::class, 'register']);
 
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 

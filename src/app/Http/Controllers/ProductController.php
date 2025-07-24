@@ -18,8 +18,8 @@ class ProductController extends Controller
 
     public function register()
     {
-        $products = Products::all();
-        return view('products.show');
+        $products = Product::all();
+        return view('products.register', ['products' => $products]);
     }
 
     public function store(ProductRequest $request)
@@ -75,7 +75,7 @@ class ProductController extends Controller
 
         public function edit(ProductRequest $request)
     {
-        $product => Product::find($request->id);
+        $product = Product::find($request->id);
         return view('edit', ['form' => $product]);
     }
 

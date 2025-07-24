@@ -19,12 +19,13 @@
         <h2>商品詳細</h2>
      </div>
    <!-- <form class="form" action="/products/store" method="POST" enctype="multipart/form-data"> -->
-   <form class="update-form" action="/products" method="post">
+   <form class="update-form" action="/products/{{ $product->id }}/update" method="post" enctype="multipart/form-data">
+    @csrf
     @method('PATCH')
+    <!-- @method('PATCH')
     @csrf
   <div class="update-form__item">
-    <input class="update-form__item-input" type="text" name="name" value="">
-    <input type="hidden" name="id" value="{{ $product['id'] }}">
+    <input type="hidden" name="id" value="{{ $product['id'] }}"> -->
     
   </div>
     <section class="store__group">
@@ -34,7 +35,7 @@
       </p>
         <div class="store__group-content">
           <div class="store__input--text">
-            <input type="text" name="name" placeholder="商品名を入力">
+            <input type="text" name="name" placeholder="商品名を入力" value="{{$product->name}}">
           </div>
         </div>
         </section>
@@ -45,7 +46,7 @@
           </p>
         <div class="store__group-content">
           <div class="store__input--text">
-            <input type="number" name="price" placeholder="値段を入力" min="0" >
+            <input type="number" name="price" placeholder="値段を入力" min="0" value="{{$product->price}}">
           </div>
         </div>
         </section>
@@ -54,7 +55,9 @@
            <span class="store__label--item">商品画像</span>
            <span class="store__label--required">必須</span>
           </p>
+
         <div class="store__group-content">
+          <img src="/storage/img/{{$product->image}}">
           <div class="store__input--text">
             <input type="file" name="file" >
           </div>
@@ -82,7 +85,7 @@
           </p>
           <div class="store__group-content">
             <div class="store__input--textarea">
-              <textarea name="textarea" placeholder="商品の説明を入力" cols="30" rows="10"></textarea> 
+              <textarea name="textarea" placeholder="商品の説明を入力" cols="30" rows="10">{{ $product->description }}</textarea> 
             </div>
           </div>
           </section>
@@ -90,9 +93,13 @@
           <a href="{{ url()->previous() }}" class="store__button-submit">戻る</a>
 
           <button class="store__button-submit"   type="submit">変更を保存</button>
-        </form>          
-       </div>
   </form>
+
+          <form action="/products/{productId}/delete?productId={{$product->productId}}" method="POST">
+            @csrf
+            <button>削除</button>
+          </form>          
+       </div>
 
 </main>
 </body>

@@ -18,27 +18,31 @@
 }
 
 .flex__item {
+    /* display: flex; */
+    width: 300px;
+    margin-bottom: 10px;
+}
+.flex__item img{
+    width: 100%;
+}
+.container {
+    width: 100%;
+}
+.list {
     display: flex;
     width: 100%;
-    margin-bottom: 10px;
-    max-width: 1230px;
+    flex-wrap: wrap;
 }
-
-.container {
-    max-width: 1200px;
-}
-
 .practice__card {
     box-shadow: 0px 3px 10px rgba(0, 0 , 0, 0.2);
     margin-bottom: 10px;
-    width: 360px;
-    flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
 }
 
-.aside {
-    width: 100%;
-    padding: 50px;
+aside {
+    width: 200px;
+    /* padding: 50px; */
 }
 
 form.search-form {

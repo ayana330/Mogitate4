@@ -49,9 +49,11 @@
         </select>
         </form>
       </aside>
+      <div>
       <div class="list">
+        @foreach ($products as $product)
+
         <div class="flex__item">
-          @foreach ($products as $product)
           <a href="products/{{$product->id}}">
           <div class="practice__card">
             <div class="fruit__img">
@@ -62,10 +64,12 @@
             </div>
           </div>
           </a>
-          @endforeach
           </div><!-- end flex__item -->
-          {{ $products->links() }}
+          @endforeach
+
           </div><!-- end list -->
+          {{ $products->links() }}
+</div>
       </div><!-- end flex -->
   </main>
 </body>

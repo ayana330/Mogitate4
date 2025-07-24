@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->string('image', 255);
             $table->text('description');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -31,8 +30,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-        });
+
     }
 }

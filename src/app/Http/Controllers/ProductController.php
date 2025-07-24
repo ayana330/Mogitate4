@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use Illuminate\Http\Request;
+
 
 use App\Http\Requests\ProductRequest;
 
@@ -12,14 +14,13 @@ class ProductController extends Controller
     public function index()
     {
         // $products = Product::all();
-        $products = Product::simplePaginate(6);
+        $products = Product::simplePaginate(15);
         return view('products', ['products' => $products]);
     }
 
     public function register()
     {
-        $products = Product::all();
-        return view('products.register', ['products' => $products]);
+        return view('products.register');
     }
 
     public function store(ProductRequest $request)
@@ -43,19 +44,24 @@ class ProductController extends Controller
         $product->description = $validated['description'];
         $product->save();
 
-        $validated = $request->validated();
-        $product_season = new Season();
-        $product_season->product_id = $validated['product_id()'];
-        $product_season->price = $validated['season_id()'];
-        $product->image = $image;
-        // $product->season = json_encode($validated['season']); // 配列を文字列化して保存
+        $data=[];
+        foreach($validated['season'] as $season){
+            $data[]=[
+               'product_id' => $product->id,
+               'season_id' => $season,
+               'created_at' => now(),
+               'updated_at' => now()
+
+            ];
+        }
+        DB::table('product_season')->insert($data);
 
         return redirect('/products')->with('success', '商品を登録しました');
     }
 
-        public function show($id)
+        public function show($productId)
     {
-        $product = Product::find($id);
+        $product = Product::find($productId);
         return view('products.show', compact('product'));
     }
 
@@ -69,8 +75,8 @@ class ProductController extends Controller
 
         public function delete(ProductRequest $request)
     {
-        $product = Product::find($request->id);
-        return view('delete', ['product' => $product]);
+        Product::find($request->id)->delete();
+        return redirect('products');
     }
 
         public function edit(ProductRequest $request)

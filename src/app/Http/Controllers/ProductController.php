@@ -67,9 +67,9 @@ class ProductController extends Controller
 
         public function update(ProductRequest $request)
     {
-        $product = $request->only(['content']);
+        $product = $request->only->all();
+        unset($product['_token']);
         Product::find($request->id)->update($product);
-
         return view('products');
     }
 

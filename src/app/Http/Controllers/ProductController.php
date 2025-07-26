@@ -73,7 +73,7 @@ class ProductController extends Controller
         return view('products');
     }
 
-        public function delete(ProductRequest $request)
+        public function delete(Request $request)
     {
         Product::find($request->id)->delete();
         return redirect('products');

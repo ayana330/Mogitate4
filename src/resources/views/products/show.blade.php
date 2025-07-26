@@ -95,9 +95,7 @@
           <button class="store__button-submit"   type="submit">変更を保存</button>
   </form>
 
-          <form action="/products/{productId}/delete?productId={{$product->productId}}" method="POST">
-            @csrf
-            <button>削除</button>
+          <a href="/products/{{ $product->id }}/delete">削除</a>
           </form>          
        </div>
 

@@ -12,12 +12,12 @@ Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/products/register', [ProductController::class, 'register']);
 
-Route::get('/products/{product->id}', [ProductController::class, 'show']);
+Route::get('/products/{productId}', [ProductController::class, 'show']);
 
 
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 
 Route::patch('/products/{productId}/update', [ProductController::class, 'update'])->name('products.update');
 
-Route::post('/products/{product->id}/delete', [ProductController::class, 'delete']);
+Route::post('/products/{productId}/delete', [ProductController::class, 'delete']);
 

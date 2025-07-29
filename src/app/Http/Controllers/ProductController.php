@@ -62,7 +62,10 @@ class ProductController extends Controller
         public function show($productId)
     {
         $product = Product::find($productId);
-        return view('products.show', compact('product'));
+        return view('products.show', [
+            'productId' => $product->id, 
+            'product' => $product,
+        ]);
     }
 
         public function update(ProductRequest $request)
@@ -73,10 +76,12 @@ class ProductController extends Controller
         return view('products');
     }
 
-        public function delete(Request $request)
+        public function delete($productId)
     {
-        Product::find($request->id)->delete();
-        return redirect('products');
+        $product = Product::findOrFail($productId);
+        $product->delete();
+
+        return redirect('/products')->with('success','削除しました');
     }
 
         public function edit(ProductRequest $request)

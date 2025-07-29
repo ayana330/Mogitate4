@@ -19,7 +19,7 @@
         <h2>商品詳細</h2>
      </div>
    <!-- <form class="form" action="/products/store" method="POST" enctype="multipart/form-data"> -->
-   <form class="update-form" action="/products/{{ $product->id }}/update" method="post" enctype="multipart/form-data">
+   <form class="update-form" action="/products/{{ $productId }}/update" method="post" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <!-- @method('PATCH')
@@ -95,8 +95,10 @@
           <button class="store__button-submit"   type="submit">変更を保存</button>
   </form>
 
-          <a href="/products/{{ $product->id }}/delete">削除</a>
-          </form>          
+        <form action="{{ url('/products/' . $product->id . '/delete') }}" method="POST" onsubmit="return confirm('本当に削除しますか？');">
+        @csrf
+        <button type="submit">削除</button>
+        </form>          
        </div>
 
 </main>

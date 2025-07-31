@@ -17,7 +17,7 @@ Route::get('/products/{productId}', [ProductController::class, 'show']);
 
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 
-Route::patch('/products/{productId}/update', [ProductController::class, 'update'])->name('products.update');
+Route::patch('/products/{productId}/update', [ProductController::class, 'update']);
 
 Route::post('/products/{productId}/delete', [ProductController::class, 'delete']);
 

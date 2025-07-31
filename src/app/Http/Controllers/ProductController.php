@@ -70,10 +70,9 @@ class ProductController extends Controller
 
         public function update(ProductRequest $request)
     {
-        $product = $request->only->all();
-        unset($product['_token']);
+        $product = $request->only(['content']);
         Product::find($request->id)->update($product);
-        return view('products');
+        return view('/products')->with('message', '更新しました');
     }
 
         public function delete($productId)
@@ -84,10 +83,5 @@ class ProductController extends Controller
         return redirect('/products')->with('success','削除しました');
     }
 
-        public function edit(ProductRequest $request)
-    {
-        $product = Product::find($request->id);
-        return view('edit', ['form' => $product]);
-    }
 
 }

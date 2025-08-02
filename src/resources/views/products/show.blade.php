@@ -92,6 +92,7 @@
 
           <a href="{{ url()->previous() }}" class="store__button-submit">戻る</a>
 
+          <a href="{{ route('products.edit', $product->id) }}">編集</a>
           <button class="store__button-submit"   type="submit">変更を保存</button>
   </form>
 

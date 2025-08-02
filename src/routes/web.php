@@ -21,3 +21,4 @@ Route::patch('/products/{productId}/update', [ProductController::class, 'update'
 
 Route::post('/products/{productId}/delete', [ProductController::class, 'delete']);
 
+Route::resource('products', ProductController::class);

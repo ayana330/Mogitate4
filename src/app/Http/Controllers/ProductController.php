@@ -68,11 +68,30 @@ class ProductController extends Controller
         ]);
     }
 
-        public function update(ProductRequest $request)
+        public function edit($id)
+        {
+            $product = Product::findOrFail($id);
+            return view('products.edit', compact('product'));
+        }
+
+        
+        public function update(Request $request, $id)
     {
-        $product = $request->only(['content']);
-        Product::find($request->id)->update($product);
-        return view('/products')->with('message', '更新しました');
+        $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+            'price' => 'required|numeric',
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+
+        return redirect()->route('products.show', $product->id)
+                         ->with('success', '商品が更新されました。');
+    
+        // $product = $request->only(['content']);
+        // Product::find($request->id)->update($product);
+        // return view('/products')->with('message', '更新しました');
     }
 
         public function delete($productId)

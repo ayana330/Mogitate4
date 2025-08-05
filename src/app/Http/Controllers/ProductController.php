@@ -102,5 +102,15 @@ class ProductController extends Controller
         return redirect('/products')->with('success','削除しました');
     }
 
+        public function find()
+    {
+        return view('find', ['input' => '']);
+    }
+        public function search(Request $request)
+    {
+        $item = Product::where('name','price','image','description',
+        )
+    }
+
 
 }

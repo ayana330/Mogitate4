@@ -109,7 +109,7 @@ class ProductController extends Controller
         public function search(Request $request)
     {
         $item = Product::where('name','price','image','description',
-        )
+    );
     }
 
 

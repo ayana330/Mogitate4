@@ -86,8 +86,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update($request->all());
 
-        return redirect()->route('products.show', $product->id)
-                         ->with('success', '商品が更新されました。');
+        return redirect('/products')->with('success', '商品を更新しました');
     
         // $product = $request->only(['content']);
         // Product::find($request->id)->update($product);
